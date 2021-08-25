@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(color: Colors.purple),
         ),
       ),
-      initialRoute: '/fourth',
+      initialRoute: '/third',
       routes: <String, WidgetBuilder> {
         '/first': (context) => FirstPage(),
         '/second': (context) => SecondPage(),
@@ -273,8 +273,6 @@ class ThirdPage extends StatelessWidget{
 }
 
 class FourthPage extends StatelessWidget{
-  get index => null;
-
   @override
   Widget build(BuildContext context) {
     final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F' ,'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'];
