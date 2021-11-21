@@ -51,30 +51,69 @@ class _CardResultState extends State<CardResult> {
           children: [
             Center(
               child: Container(
-                // margin: EdgeInsets.only(left: 50.0, right: 50.0, bottom: 4.0),
+                margin: EdgeInsets.only(left: 50.0, right: 50.0, bottom: 4.0, top: 10.0),
                 alignment: Alignment.center,
                 child: FlipCard(
                   direction: FlipDirection.HORIZONTAL,
 
                   front: Column( children: [
                     Container(
-                      child: Image.network(widget.newcard.img, fit: BoxFit.cover),
+                      child: Image.network(
+                        widget.newcard.img, fit: BoxFit.cover),
                     ),
                     Container(
-                      child: Text(widget.newcard.content),
+                      child: Text(
+                        'คุณได้ไพ่${widget.newcard.card}', 
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    Container(
+                      child: Text(
+                        widget.newcard.content),
                       ),
                     ],
                   ),
 
                   back: Column( children: [
                   Container(
-                      child: Text(widget.newcard.work),
+                      child: Text('การงาน', 
+                      textAlign: TextAlign.left,
+                      style:TextStyle(
+                      fontWeight: FontWeight.bold)
+                      ), 
+                    ),  
+                  Container( 
+                      child: Text(
+                        widget.newcard.work,style: TextStyle(
+                          fontSize: 14.0, height: 1.5), 
                       ),
+                    ),
                   Container(
-                      child: Text(widget.newcard.money),
+                      child: Text('การเงิน', 
+                      textAlign: TextAlign.left,
+                      style:TextStyle(
+                      fontWeight: FontWeight.bold)
+                      ), 
+                    ),
+                  Container(
+                      child: Text(
+                        widget.newcard.money,style: TextStyle(
+                          fontSize: 14.0, height: 2.0),
                       ),
+                    ),
                   Container(
-                      child: Text(widget.newcard.love),
+                      child: Text('ความรัก', 
+                      textAlign: TextAlign.left,
+                      style:TextStyle(
+                      fontWeight: FontWeight.bold)
+                      ), 
+                    ),
+                  Container(
+                      child: Text(
+                        widget.newcard.love,style: TextStyle(
+                          fontSize: 14.0, height: 1.5),
+                        ),
                       ),
                      ],
                     ),

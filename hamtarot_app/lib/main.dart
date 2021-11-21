@@ -67,7 +67,7 @@ class MyAppHamtarot extends StatelessWidget {
             Theme.of(context).textTheme,
           ),
         ),
-        initialRoute: '/1',
+        initialRoute: '/3',
         routes: <String, WidgetBuilder>{
           '/1': (context) => MyHomePage(),
           '/2': (context) => FormPage(), //form
