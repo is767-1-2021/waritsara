@@ -1,12 +1,15 @@
 import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:hamtarot_app/Card/Card_Result.dart';
 import 'package:hamtarot_app/HomePage.dart';
+import 'package:hamtarot_app/Login/model.dart';
 import 'package:hamtarot_app/controller/card_controller.dart';
 import 'package:hamtarot_app/model/card_model.dart';
 import 'package:hamtarot_app/service/card_service.dart';
+import 'package:provider/provider.dart';
 
 class MyAppCard1 extends StatefulWidget {
   @override
@@ -87,7 +90,7 @@ class _MyAppCard1State extends State<MyAppCard1> {
                     onTap: () async {
                       getcard();
                       setState(() {});
-                      await Future.delayed(const Duration(milliseconds: 1000));
+                      await Future.delayed(const Duration(milliseconds: 2000));
                       await showDialog(
                           context: context,
                           builder: (BuildContext context) {
@@ -96,9 +99,17 @@ class _MyAppCard1State extends State<MyAppCard1> {
                               content: Text('คุณได้ไพ่ใบที่${newcard.id}'),
                               contentPadding: EdgeInsets.all(30),
                               actions: <Widget>[
-                                ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
+                                Consumer<Loginmodel>(builder: (context, form, child) {
+                                 return ElevatedButton(
+                                    onPressed: () async {
+                                      FirebaseFirestore.instance
+                                      .collection('ham_history')
+                                      .add({
+                                        'email': form.email,
+                                        'result' : newcard.card,
+                                        'timeStamp': Timestamp.now()
+                                       });
+                                      await Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) => CardResult(
@@ -106,11 +117,12 @@ class _MyAppCard1State extends State<MyAppCard1> {
                                             ),
                                           ));
                                      },
-                                    child: Center(child: Text('ดูคำทำนาย'))),
+                                    child: Center(child: Text('ดูคำทำนาย')));
+                                 }),
                               ],
                             );
                           });
-                     },
+                       },
                     child: Image(
                       image: AssetImage('assets/card_back.png'),
                       fit: BoxFit.cover,
@@ -126,7 +138,7 @@ class _MyAppCard1State extends State<MyAppCard1> {
                     onTap: () async {
                       getcard();
                       setState(() {});
-                      await Future.delayed(const Duration(milliseconds: 1000));
+                      await Future.delayed(const Duration(milliseconds: 2000));
                       await showDialog(
                           context: context,
                           builder: (BuildContext context) {
@@ -135,9 +147,17 @@ class _MyAppCard1State extends State<MyAppCard1> {
                               content: Text('คุณได้ไพ่ใบที่${newcard.id}'),
                               contentPadding: EdgeInsets.all(30),
                               actions: <Widget>[
-                                ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
+                                Consumer<Loginmodel>(builder: (context, form, child) {
+                                 return ElevatedButton(
+                                    onPressed: () async {
+                                      FirebaseFirestore.instance
+                                      .collection('ham_history')
+                                      .add({
+                                        'email': form.email,
+                                        'result' : newcard.card,
+                                        'timeStamp': Timestamp.now()
+                                       });
+                                      await Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) => CardResult(
@@ -145,11 +165,12 @@ class _MyAppCard1State extends State<MyAppCard1> {
                                             ),
                                           ));
                                      },
-                                    child: Center(child: Text('ดูคำทำนาย'))),
+                                    child: Center(child: Text('ดูคำทำนาย')));
+                                 }),
                               ],
                             );
                           });
-                     },
+                       },
                     child: Image(
                       image: AssetImage('assets/card_back.png'),
                       fit: BoxFit.cover,
@@ -165,7 +186,7 @@ class _MyAppCard1State extends State<MyAppCard1> {
                     onTap: () async {
                       getcard();
                       setState(() {});
-                      await Future.delayed(const Duration(milliseconds: 1000));
+                      await Future.delayed(const Duration(milliseconds: 2000));
                       await showDialog(
                           context: context,
                           builder: (BuildContext context) {
@@ -174,9 +195,17 @@ class _MyAppCard1State extends State<MyAppCard1> {
                               content: Text('คุณได้ไพ่ใบที่${newcard.id}'),
                               contentPadding: EdgeInsets.all(30),
                               actions: <Widget>[
-                                ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
+                                Consumer<Loginmodel>(builder: (context, form, child) {
+                                 return ElevatedButton(
+                                    onPressed: () async {
+                                      FirebaseFirestore.instance
+                                      .collection('ham_history')
+                                      .add({
+                                        'email': form.email,
+                                        'result' : newcard.card,
+                                        'timeStamp': Timestamp.now()
+                                       });
+                                      await Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) => CardResult(
@@ -184,11 +213,12 @@ class _MyAppCard1State extends State<MyAppCard1> {
                                             ),
                                           ));
                                      },
-                                    child: Center(child: Text('ดูคำทำนาย'))),
+                                    child: Center(child: Text('ดูคำทำนาย')));
+                                 }),
                               ],
                             );
                           });
-                     },
+                       },
                     child: Image(
                       image: AssetImage('assets/card_back.png'),
                       fit: BoxFit.cover,
@@ -204,7 +234,7 @@ class _MyAppCard1State extends State<MyAppCard1> {
                     onTap: () async {
                       getcard();
                       setState(() {});
-                      await Future.delayed(const Duration(milliseconds: 1000));
+                       await Future.delayed(const Duration(milliseconds: 2000));
                       await showDialog(
                           context: context,
                           builder: (BuildContext context) {
@@ -213,9 +243,17 @@ class _MyAppCard1State extends State<MyAppCard1> {
                               content: Text('คุณได้ไพ่ใบที่${newcard.id}'),
                               contentPadding: EdgeInsets.all(30),
                               actions: <Widget>[
-                                ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
+                                Consumer<Loginmodel>(builder: (context, form, child) {
+                                 return ElevatedButton(
+                                    onPressed: () async {
+                                      FirebaseFirestore.instance
+                                      .collection('ham_history')
+                                      .add({
+                                        'email': form.email,
+                                        'result' : newcard.card,
+                                        'timeStamp': Timestamp.now()
+                                       });
+                                      await Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) => CardResult(
@@ -223,11 +261,12 @@ class _MyAppCard1State extends State<MyAppCard1> {
                                             ),
                                           ));
                                      },
-                                    child: Center(child: Text('ดูคำทำนาย'))),
+                                    child: Center(child: Text('ดูคำทำนาย')));
+                                 }),
                               ],
                             );
                           });
-                     },
+                       },
                     child: Image(
                       image: AssetImage('assets/card_back.png'),
                       fit: BoxFit.cover,
@@ -243,7 +282,7 @@ class _MyAppCard1State extends State<MyAppCard1> {
                       onTap: () async {
                       getcard();
                       setState(() {});
-                      await Future.delayed(const Duration(milliseconds: 1000));
+                       await Future.delayed(const Duration(milliseconds: 2000));
                       await showDialog(
                           context: context,
                           builder: (BuildContext context) {
@@ -252,9 +291,17 @@ class _MyAppCard1State extends State<MyAppCard1> {
                               content: Text('คุณได้ไพ่ใบที่${newcard.id}'),
                               contentPadding: EdgeInsets.all(30),
                               actions: <Widget>[
-                                ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
+                                Consumer<Loginmodel>(builder: (context, form, child) {
+                                 return ElevatedButton(
+                                    onPressed: () async {
+                                      FirebaseFirestore.instance
+                                      .collection('ham_history')
+                                      .add({
+                                        'email': form.email,
+                                        'result' : newcard.card,
+                                        'timeStamp': Timestamp.now()
+                                       });
+                                      await Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) => CardResult(
@@ -262,11 +309,12 @@ class _MyAppCard1State extends State<MyAppCard1> {
                                             ),
                                           ));
                                      },
-                                    child: Center(child: Text('ดูคำทำนาย'))),
+                                    child: Center(child: Text('ดูคำทำนาย')));
+                                 }),
                               ],
                             );
                           });
-                     },
+                       },
                       child: Image(
                         image: AssetImage('assets/card_back.png'),
                         fit: BoxFit.cover,
@@ -290,9 +338,17 @@ class _MyAppCard1State extends State<MyAppCard1> {
                               content: Text('คุณได้ไพ่ใบที่${newcard.id}'),
                               contentPadding: EdgeInsets.all(30),
                               actions: <Widget>[
-                                ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
+                                Consumer<Loginmodel>(builder: (context, form, child) {
+                                 return ElevatedButton(
+                                    onPressed: () async {
+                                      FirebaseFirestore.instance
+                                      .collection('ham_history')
+                                      .add({
+                                        'email': form.email,
+                                        'result': newcard.card,
+                                        'timeStamp': Timestamp.now()
+                                       });
+                                      await Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) => CardResult(
@@ -300,11 +356,12 @@ class _MyAppCard1State extends State<MyAppCard1> {
                                             ),
                                           ));
                                      },
-                                    child: Center(child: Text('ดูคำทำนาย'))),
+                                    child: Center(child: Text('ดูคำทำนาย')));
+                                 }),
                               ],
                             );
                           });
-                     },
+                       },
                     child: Image(
                       image: AssetImage('assets/card_back.png'),
                       fit: BoxFit.cover,
@@ -320,7 +377,7 @@ class _MyAppCard1State extends State<MyAppCard1> {
                     onTap: () async {
                       getcard();
                       setState(() {});
-                      await Future.delayed(const Duration(milliseconds: 1000));
+                      await Future.delayed(const Duration(milliseconds: 2000));
                       await showDialog(
                           context: context,
                           builder: (BuildContext context) {
@@ -329,9 +386,17 @@ class _MyAppCard1State extends State<MyAppCard1> {
                               content: Text('คุณได้ไพ่ใบที่${newcard.id}'),
                               contentPadding: EdgeInsets.all(30),
                               actions: <Widget>[
-                                ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
+                                Consumer<Loginmodel>(builder: (context, form, child) {
+                                 return ElevatedButton(
+                                    onPressed: () async {
+                                      FirebaseFirestore.instance
+                                        .collection('ham_history')
+                                        .add({
+                                         'email': form.email,
+                                         'result' : newcard.card,
+                                         'timeStamp': Timestamp.now()
+                                       });
+                                      await Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) => CardResult(
@@ -339,7 +404,8 @@ class _MyAppCard1State extends State<MyAppCard1> {
                                             ),
                                           ));
                                      },
-                                    child: Center(child: Text('ดูคำทำนาย'))),
+                                    child: Center(child: Text('ดูคำทำนาย')));
+                                 }),
                               ],
                             );
                           });
