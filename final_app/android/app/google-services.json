@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "164368656100",
+    "project_id": "is767-2021-waritsara",
+    "storage_bucket": "is767-2021-waritsara.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164368656100:android:d7e78ea15c04ab6e19aef1",
+        "android_client_info": {
+          "package_name": "com.example.final_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164368656100-gp16ago8ujo6ao4q4clad5frg2d24i4d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASaIKGdvFy_OtsLKyM1yXqZIVkEj10_mM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164368656100-gp16ago8ujo6ao4q4clad5frg2d24i4d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
